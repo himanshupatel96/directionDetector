@@ -84,7 +84,8 @@ while True:
 			x,y,w,h = cv2.boundingRect(	contour)
 			if w*h > 2000:
 #				cv2.rectangle(canny, (x,y),(x+w,y+h),RED, 1)
-				cv2.rectangle(paintBoard, (x,y),(x+w,y+h),RED, 1)
+#				cv2.rectangle(paintBoard, (x,y),(x+w,y+h),RED, 1)
+				cv2.line(paintBoard, (x,y),(320,240),RED, 2)
 				msg = 'Center'
 				if x < 270:
 					if y < 190:
@@ -107,7 +108,7 @@ while True:
 						msg = 'Down'
 
 				cv2.putText(paintBoard, msg, (220,320), font, 1, (0,0,0),3,cv2.CV_AA)
-	cv2.imshow('Paint Board', paintBoard)
+	cv2.imshow('Direction', paintBoard)
 #	cv2.imshow('Edges', canny)
 	
 
